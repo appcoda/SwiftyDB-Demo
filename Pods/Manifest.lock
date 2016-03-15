@@ -1,0 +1,18 @@
+PODS:
+  - sqlite3 (3.11.0):
+    - sqlite3/common (= 3.11.0)
+  - sqlite3/common (3.11.0)
+  - SwiftyDB (1.0.0):
+    - TinySQLite (~> 0.3.0)
+  - TinySQLite (0.3.1):
+    - sqlite3
+
+DEPENDENCIES:
+  - SwiftyDB
+
+SPEC CHECKSUMS:
+  sqlite3: ec9888870f3b020cf2fdd649ce69b014aed205ae
+  SwiftyDB: 9a5cf6461c086ef54d12a1980a47fa234d654cad
+  TinySQLite: b27a26c4676a41f045f56e0d94ccc4bce9a1a87f
+
+COCOAPODS: 0.39.0

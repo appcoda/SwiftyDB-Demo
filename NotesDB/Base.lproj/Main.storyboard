@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q4U-ci-Hoh">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Note List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NoteListViewController" customModule="NotesDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="46W-eh-h9y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="46W-eh-h9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="5Bm-KZ-Yxi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="46W-eh-h9y" secondAttribute="bottom" id="BpW-oM-6XR"/>
+                            <constraint firstItem="46W-eh-h9y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Kbk-oh-6Pe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="46W-eh-h9y" secondAttribute="trailing" constant="-20" id="spP-cJ-gA9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oMB-ww-ncm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Oyl-Ua-mhJ">
+                            <connections>
+                                <segue destination="gKI-kK-zzh" kind="show" identifier="idSegueEditNote" id="XTZ-bY-VSA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tblNotes" destination="46W-eh-h9y" id="wCH-RK-Ec4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="616"/>
+        </scene>
+        <!--Edit Note View Controller-->
+        <scene sceneID="zDK-Sf-45j">
+            <objects>
+                <viewController id="gKI-kK-zzh" customClass="EditNoteViewController" customModule="NotesDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="St5-SK-pae"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZzT-vh-OFh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fzd-Pz-cty">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MsQ-GK-8u8">
+                                <rect key="frame" x="5" y="110" width="590" height="446"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fK7-GQ-KKx">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1k7-2S-NqV"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="hEJ-7C-1me">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="insertPicture:" destination="gKI-kK-zzh" id="XvB-5Z-bx9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uSP-fR-LQR"/>
+                                    <barButtonItem image="Lowercase Filled" id="xRh-mH-eKv">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="changeFontName:" destination="gKI-kK-zzh" id="om3-NN-Iai"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1Od-ew-vyr"/>
+                                    <barButtonItem image="Increase Font Filled" id="XfI-lj-3Fh">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="changeFontSize:" destination="gKI-kK-zzh" id="0yp-5W-ans"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fpT-GH-SDZ"/>
+                                    <barButtonItem image="Color Dropper Filled" id="717-9O-aG7">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="changeTextColor:" destination="gKI-kK-zzh" id="75O-8k-B9I"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDm-qf-bOd">
+                                <rect key="frame" x="8" y="72" width="584" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="66o-uy-OxV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4i-dD-sNa">
+                                <rect key="frame" x="0.0" y="110" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="KCu-fi-bmf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fK7-GQ-KKx" firstAttribute="bottom" secondItem="ZzT-vh-OFh" secondAttribute="top" id="0e0-gL-BMw"/>
+                            <constraint firstItem="T4i-dD-sNa" firstAttribute="top" secondItem="kDm-qf-bOd" secondAttribute="bottom" constant="8" id="254-Dw-d2i"/>
+                            <constraint firstItem="MsQ-GK-8u8" firstAttribute="top" secondItem="T4i-dD-sNa" secondAttribute="top" id="7Te-pA-xMx"/>
+                            <constraint firstItem="fK7-GQ-KKx" firstAttribute="top" secondItem="MsQ-GK-8u8" secondAttribute="bottom" id="BvG-Pq-K6K"/>
+                            <constraint firstItem="MsQ-GK-8u8" firstAttribute="leading" secondItem="fzd-Pz-cty" secondAttribute="leadingMargin" constant="-15" id="Db9-ou-bjN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fK7-GQ-KKx" secondAttribute="trailing" constant="-20" id="FOv-us-7XE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T4i-dD-sNa" secondAttribute="trailing" constant="-20" id="Ipg-nR-Ia8"/>
+                            <constraint firstItem="kDm-qf-bOd" firstAttribute="top" secondItem="St5-SK-pae" secondAttribute="bottom" constant="8" symbolic="YES" id="Ngu-3Y-ZHb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kDm-qf-bOd" secondAttribute="trailing" constant="-12" id="PJ3-MP-kq9"/>
+                            <constraint firstItem="kDm-qf-bOd" firstAttribute="leading" secondItem="fzd-Pz-cty" secondAttribute="leadingMargin" constant="-12" id="Qc5-hs-EpN"/>
+                            <constraint firstItem="T4i-dD-sNa" firstAttribute="leading" secondItem="fzd-Pz-cty" secondAttribute="leadingMargin" constant="-20" id="Zik-oQ-Kld"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MsQ-GK-8u8" secondAttribute="trailing" constant="-15" id="hkn-PN-w2v"/>
+                            <constraint firstItem="fK7-GQ-KKx" firstAttribute="leading" secondItem="fzd-Pz-cty" secondAttribute="leadingMargin" constant="-20" id="t3d-ZM-t97"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tvNote" destination="MsQ-GK-8u8" id="I8I-du-UN6"/>
+                        <outlet property="txtTitle" destination="kDm-qf-bOd" id="uqL-EB-Nby"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6h9-VR-x1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="616"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jvj-cq-UMQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q4U-ci-Hoh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="az0-Kl-eMw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6xm-gr-fJT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cY-Zg-cez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="616"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Color Dropper Filled" width="25" height="25"/>
+        <image name="Increase Font Filled" width="25" height="25"/>
+        <image name="Lowercase Filled" width="25" height="25"/>
+    </resources>
+</document>
