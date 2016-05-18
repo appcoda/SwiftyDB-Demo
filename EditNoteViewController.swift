@@ -40,7 +40,7 @@ class EditNoteViewController: UIViewController, UIImagePickerControllerDelegate,
 
         // Do any additional setup after loading the view.
         
-        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "dismissKeyboard")
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(EditNoteViewController.dismissKeyboard))
         swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Down
         view.addGestureRecognizer(swipeGestureRecognizer)
         
@@ -104,7 +104,7 @@ class EditNoteViewController: UIViewController, UIImagePickerControllerDelegate,
     // MARK: Custom Methods
     
     func configureNavBar() {
-        let saveBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "saveNote")
+        let saveBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: #selector(EditNoteViewController.saveNote))
         navigationItem.rightBarButtonItem = saveBarButton
     }
     
