@@ -26,7 +26,7 @@ class PanningImageView: UIImageView {
         
         lastCenter = center
         
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "moveImageView:")
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(PanningImageView.moveImageView(_:)))
         addGestureRecognizer(panGestureRecognizer)
         
         userInteractionEnabled = true
